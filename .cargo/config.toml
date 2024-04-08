@@ -1,0 +1,7 @@
+[alias]
+bc = "build --all-targets --all-features"
+bcv = "bc --verbose"
+tc = "test --all-features"
+tcv = "tc --verbose"
+cc = "clippy --all-targets --all-features"
+fc = "fmt --all --check"
