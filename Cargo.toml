@@ -1,0 +1,44 @@
+[package]
+name = "minbpe"
+version = "0.1.0"
+description = "Port of Andrej Karpathy's minbpe to Rust"
+authors = ["Gregor Purdy <gregor@abcelo.com>"]
+license = "MIT OR Apache-2.0"
+edition = "2021"
+keywords = ["language-model", "codec", "gpt", "ai"]
+readme = "README.md"
+repository = "https://github.com/gnp/minbpe-rs.git"
+include = ["assets/**/*"]
+
+[features]
+default = ["basic", "regex"]
+basic = []
+regex = []
+gpt4 = ["regex"]
+tiktoken_tests = ["gpt4", "tiktoken-rs"]
+
+[lib]
+path = "src/lib.rs"
+
+[dependencies]
+regex = "1.10"
+fancy-regex = "0.13"
+indexmap = "2.2"
+lazy_static = "1.4.0"
+base64 = "0.21.5"
+tiktoken-rs = { version = "0.5.8", optional = true }
+
+[dev-dependencies]
+tempfile = "3.10"
+proptest = "1.4.0"
+
+[profile.release]
+debug = true
+
+[[example]]
+name = "gpt4_encode"
+required-features = ["gpt4"]
+
+[[example]]
+name = "test_gpt4"
+required-features = ["gpt4"]
