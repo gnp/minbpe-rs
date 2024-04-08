@@ -8,7 +8,7 @@ edition = "2021"
 keywords = ["language-model", "codec", "gpt", "ai"]
 readme = "README.md"
 repository = "https://github.com/gnp/minbpe-rs.git"
-include = ["assets/**/*"]
+include = ["assets/**/*", "examples/**/*", "src/**/*", "tests/**/*"]
 
 [features]
 default = ["basic", "regex"]
